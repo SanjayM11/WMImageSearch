@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ImageViewController" customModule="WMImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TiJ-gs-sNi">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="fqC-yS-VWC" customClass="CollectionViewLayout" customModule="WMImageSearch" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="mnJ-su-nbF" customClass="CollectionViewCell" customModule="WMImageSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="86A-Cb-gJD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="86A-Cb-gJD" firstAttribute="top" secondItem="mnJ-su-nbF" secondAttribute="top" id="13W-fI-mKP"/>
+                                            <constraint firstAttribute="bottom" secondItem="86A-Cb-gJD" secondAttribute="bottom" id="1S7-c0-hXA"/>
+                                            <constraint firstAttribute="trailing" secondItem="86A-Cb-gJD" secondAttribute="trailing" id="Lme-Fy-7vk"/>
+                                            <constraint firstItem="86A-Cb-gJD" firstAttribute="leading" secondItem="mnJ-su-nbF" secondAttribute="leading" id="pR9-pm-40g"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="86A-Cb-gJD" id="RKC-hE-677"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uU0-i3-BC1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Tn6-Nb-B1e"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="zZN-4N-p8A"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyy-c4-USN">
+                                <rect key="frame" x="20" y="74" width="335" height="500"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Gx-uwA">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="500"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="wwC-1y-eFI"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="30" id="YQu-sD-GKS">
+                                                <rect key="frame" x="0.0" y="28" width="335" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQu-sD-GKS" id="yVl-Uu-dyO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="29.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="GD8-79-8lp"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="iRq-jo-KIX"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="Zm9-Gx-uwA" secondAttribute="height" id="1as-Zt-X1I"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zm9-Gx-uwA" secondAttribute="trailing" id="7n8-xx-ZEn"/>
+                                    <constraint firstItem="Zm9-Gx-uwA" firstAttribute="leading" secondItem="tyy-c4-USN" secondAttribute="leading" id="Ilt-SN-bvS"/>
+                                    <constraint firstItem="Zm9-Gx-uwA" firstAttribute="top" secondItem="tyy-c4-USN" secondAttribute="top" id="Kd4-Et-OQW"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-rG-dIy">
+                                <rect key="frame" x="0.0" y="21" width="375" height="56"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="7qC-At-iPo"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nN2-CK-IEo"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-hF-cVv">
+                                <rect key="frame" x="-1" y="21" width="216" height="57"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="Sss-CB-Kue"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TIZ-rG-dIy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0ON-so-HxI"/>
+                            <constraint firstItem="tyy-c4-USN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2Mu-bB-SMa"/>
+                            <constraint firstItem="TIZ-rG-dIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="97P-cd-D3z"/>
+                            <constraint firstItem="KtF-hF-cVv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="Nop-KF-KAS"/>
+                            <constraint firstItem="TiJ-gs-sNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PaQ-v9-ykK"/>
+                            <constraint firstItem="tyy-c4-USN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Uze-Sc-lUE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KtF-hF-cVv" secondAttribute="trailing" constant="160" id="e68-wZ-kiU"/>
+                            <constraint firstItem="tyy-c4-USN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="fxY-nj-4Xq"/>
+                            <constraint firstAttribute="trailing" secondItem="TiJ-gs-sNi" secondAttribute="trailing" id="gxv-Xg-Sd7"/>
+                            <constraint firstItem="TiJ-gs-sNi" firstAttribute="top" secondItem="TIZ-rG-dIy" secondAttribute="bottom" symbolic="YES" id="mcz-nD-2cd"/>
+                            <constraint firstItem="KtF-hF-cVv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="qsV-YU-D0b"/>
+                            <constraint firstItem="TiJ-gs-sNi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sBr-IZ-4Ng"/>
+                            <constraint firstItem="TIZ-rG-dIy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="wEZ-gf-vEm"/>
+                            <constraint firstItem="TiJ-gs-sNi" firstAttribute="top" secondItem="TIZ-rG-dIy" secondAttribute="bottom" symbolic="YES" id="xl1-Mi-29w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="aView" destination="KtF-hF-cVv" id="w4S-ff-xfp"/>
+                        <outlet property="collectionView" destination="TiJ-gs-sNi" id="7zI-rV-BUk"/>
+                        <outlet property="dropDownView" destination="tyy-c4-USN" id="JOl-Kn-C90"/>
+                        <outlet property="dropDownViewHeightConstraint" destination="wwC-1y-eFI" id="AyP-xy-OZj"/>
+                        <outlet property="searchBar" destination="TIZ-rG-dIy" id="d7T-pa-T2g"/>
+                        <outlet property="tableView" destination="Zm9-Gx-uwA" id="E0J-3T-083"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Detail Image View Controller-->
+        <scene sceneID="Qcc-Ma-Gxg">
+            <objects>
+                <viewController storyboardIdentifier="DetailImageViewController" id="F0C-GL-AlK" customClass="DetailImageViewController" customModule="WMImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LKz-s6-3aV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rJ6-SM-upX">
+                                <rect key="frame" x="0.0" y="63" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TtV-eP-azV">
+                                    <size key="itemSize" width="375" height="500"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailImageCollectionViewCell" id="bQc-Nf-0hQ" customClass="DetailImageCollectionViewCell" customModule="WMImageSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o93-YX-sPK">
+                                                    <rect key="frame" x="0.0" y="2" width="375" height="545"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="o93-YX-sPK" secondAttribute="bottom" constant="-2" id="JN1-ny-FgS"/>
+                                            <constraint firstItem="o93-YX-sPK" firstAttribute="top" secondItem="bQc-Nf-0hQ" secondAttribute="top" constant="2" id="SUW-Sp-VSt"/>
+                                            <constraint firstItem="o93-YX-sPK" firstAttribute="leading" secondItem="bQc-Nf-0hQ" secondAttribute="leading" id="iv2-SI-xh5"/>
+                                            <constraint firstAttribute="trailing" secondItem="o93-YX-sPK" secondAttribute="trailing" id="xXC-fF-iIJ"/>
+                                        </constraints>
+                                        <size key="customSize" width="375" height="545"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="o93-YX-sPK" id="RCf-DZ-U1E"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="F0C-GL-AlK" id="3ba-dV-zVd"/>
+                                    <outlet property="delegate" destination="F0C-GL-AlK" id="2nx-Mf-3BS"/>
+                                    <outlet property="prefetchDataSource" destination="F0C-GL-AlK" id="NXe-9d-Pbf"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydD-qo-jil">
+                                <rect key="frame" x="19" y="23" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Ui6-ta-QaM"/>
+                                    <constraint firstAttribute="height" constant="24" id="hS1-Hz-Y7s"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="onBackBtnTouched:" destination="F0C-GL-AlK" eventType="touchUpInside" id="0cg-AT-atm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="914-Os-K69" firstAttribute="bottom" secondItem="rJ6-SM-upX" secondAttribute="bottom" constant="59" id="4Zw-72-yse"/>
+                            <constraint firstItem="rJ6-SM-upX" firstAttribute="top" secondItem="ydD-qo-jil" secondAttribute="bottom" constant="16" id="7lf-EO-GCV"/>
+                            <constraint firstItem="ydD-qo-jil" firstAttribute="leading" secondItem="914-Os-K69" secondAttribute="leading" constant="19" id="Orn-SH-ZHa"/>
+                            <constraint firstItem="rJ6-SM-upX" firstAttribute="top" secondItem="ydD-qo-jil" secondAttribute="bottom" constant="16" id="U2m-ml-Qyt"/>
+                            <constraint firstItem="rJ6-SM-upX" firstAttribute="trailing" secondItem="914-Os-K69" secondAttribute="trailing" id="ts6-zj-8NG"/>
+                            <constraint firstItem="ydD-qo-jil" firstAttribute="top" secondItem="914-Os-K69" secondAttribute="top" constant="3" id="ydR-Pa-bIE"/>
+                            <constraint firstItem="rJ6-SM-upX" firstAttribute="leading" secondItem="914-Os-K69" secondAttribute="leading" id="zMu-21-pp6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="914-Os-K69"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="ydD-qo-jil" id="mbz-Sk-MRV"/>
+                        <outlet property="collectionView" destination="rJ6-SM-upX" id="TO7-Wu-xqK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9u-Ud-5MG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.60000000000002" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="24" height="24"/>
+    </resources>
+</document>
